@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="Reflection" default="run">
+    <property file="build.properties"/>
+    <target name="run" depends="build">
+        <java classpath="${build.dir}" classname="${main.class}"/>
+    </target>
+    <target name="build" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false"/>
+    </target>
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+    </target>
+</project>
